@@ -4,6 +4,7 @@
 
 #include "palindrome.h"
 
+
 char* str_reverse(char* str) {
   int len, i;
   char* result;
@@ -22,7 +23,7 @@ char* palindrome(char* str) {
   char *rev;
   int i;
   bool result = true;
-  char *answer;
+  char* answer;
 
   rev = str_reverse(str);
   i = 0;
@@ -32,7 +33,7 @@ char* palindrome(char* str) {
     }
     ++i;
   }
-
+  free(rev);
   if (result) {
     answer = (char*) calloc(4, sizeof(char));
     answer[0] = 'Y';
@@ -48,3 +49,5 @@ char* palindrome(char* str) {
 
   return answer;
 }
+
+
