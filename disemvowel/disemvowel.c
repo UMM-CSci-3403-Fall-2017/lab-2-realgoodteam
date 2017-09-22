@@ -21,13 +21,13 @@ char* disemvowel(char* str) {
   }
   noVowel = calloc(len - VowelCheck+1,sizeof(char));
   VowelCheck = 0;
-  for (i=0;i<strlen(str) + VowelCheck;i++){
+  for (i=0;i<len;i++){
 	found = 0;
 	for(j = 0; j < 11; j++){
   		if(vowels[j] == str[i]){
-			printf("found vowel\n");
-			printf(noVowel);
 			found = 1;
+			VowelCheck++;
+				
 		}
 	}
 	if(found == 0) {
