@@ -19,7 +19,7 @@ char* disemvowel(char* str) {
 		}
 	}
   }
-  noVowel = calloc(len - VowelCheck+1,sizeof(char));
+  noVowel = (char*) calloc(len - VowelCheck + 1,sizeof(char));
   VowelCheck = 0;
   for (i=0;i<len;i++){
 	found = 0;
