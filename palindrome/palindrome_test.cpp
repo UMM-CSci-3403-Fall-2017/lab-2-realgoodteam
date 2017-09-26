@@ -6,6 +6,11 @@ void is_palindrome(char* str) {
   char* pal = palindrome(str);
   ASSERT_STREQ(pal, "Yes");
   free(pal);
+  // we simply changed is_palindrome and
+  // not_palindrome so that the palindrome
+  // call is saved into a variable, and
+  // the string returned is cleared when the test is done.
+  // This effectively fixes all memory leak issues in the file.
 }
 
 void not_palindrome(char* str) {

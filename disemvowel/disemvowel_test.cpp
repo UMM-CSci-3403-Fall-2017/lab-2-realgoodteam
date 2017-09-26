@@ -2,6 +2,8 @@
 
 #include "disemvowel.h"
 
+//The following tests were changed
+// simply to free up deReturn after being used.
 TEST(Disemvowel, HandleEmptyString) {
   char* deReturn = disemvowel((char*) "");
   ASSERT_STREQ("", deReturn);
@@ -28,7 +30,7 @@ TEST(Disemvowel, HandleMorrisMinnesota) {
 
 TEST(Disemvowel, HandlePunctuation) {
   char* deReturn = disemvowel((char*) "An (Unexplained) Elephant!");
-  ASSERT_STREQ("n (nxplnd) lphnt!", 
+  ASSERT_STREQ("n (nxplnd) lphnt!",
 		      deReturn);
   free(deReturn);
 }
@@ -47,11 +49,12 @@ TEST(Disemvowel, HandleLongString) {
     str[i] = 'a';
   }
   str[size-1] = '\0';
-  
+
   char* deReturn = disemvowel(str);
   ASSERT_STREQ("xyz", deReturn);
   free(deReturn);
   free(str);
+  // free up deReturn and str after they have been utilized
 }
 
 int main(int argc, char* argv[]) {

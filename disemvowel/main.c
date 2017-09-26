@@ -7,7 +7,7 @@ int main(int argc, char* argv[]) {
   char* line;
   size_t size;
   char* withoutVowels;
-  
+
   size = 100;
   line = (char*) malloc (size + 1);
 
@@ -15,5 +15,8 @@ int main(int argc, char* argv[]) {
 	  withoutVowels=disemvowel(line);
     printf("%s\n", withoutVowels);
     free(withoutVowels);
+    //Saved the disemvowel method call to
+    // a variable so that the string being
+    // returned can be freed after it's printed.
   }
 }
